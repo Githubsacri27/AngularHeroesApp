@@ -13,30 +13,34 @@ const routes: Routes = [
     children: [
       {
         path: 'new-hero',
-        component: NewPageComponent
+        component: NewPageComponent,
       },
       {
         path: 'search',
-        component: SearchPageComponent
+        component: SearchPageComponent,
       },
       {
         path: 'edit/:id',
-        component: NewPageComponent
+        component: NewPageComponent,
       },
       {
         path: 'list',
-        component: ListPageComponent
+        component: ListPageComponent,
       },
       {
         path: ':id',
-        component: HeroPageComponent
+        component: HeroPageComponent,
       },
-    ]
+      {
+        path: '**',
+        redirectTo: 'list'
+      },
+    ],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HeroesRoutingModule { }
+export class HeroesRoutingModule {}
