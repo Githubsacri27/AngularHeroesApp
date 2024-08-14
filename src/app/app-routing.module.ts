@@ -16,6 +16,15 @@ const routes: Routes = [
     path: '404',
     component: Error404PageComponent
   },
+  {
+    path: '',
+    redirectTo: 'heroes',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: '404',
+  },
 ];
 
 @NgModule({
